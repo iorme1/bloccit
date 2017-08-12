@@ -52,6 +52,6 @@ class PostsController < ApplicationController
     else
       flash.now[:alert] = "There was an error deleting the post."
       render :show
-    end 
+    end
   end
 end
