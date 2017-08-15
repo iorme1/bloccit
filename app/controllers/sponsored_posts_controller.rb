@@ -14,8 +14,8 @@ class SponsoredPostsController < ApplicationController
 
   def create
     @sponsoredpost = SponsoredPost.new
-    @sponsoredpost.title = params[:sponsoredpost][:title]
-    @sponsoredpost.body = params[:sponsoredpost][:body]
+    @sponsoredpost.title = params[:sponsored_post][:title]
+    @sponsoredpost.body = params[:sponsored_post][:body]
     @topic = Topic.find(params[:topic_id])
     @sponsoredpost.topic = @topic
 
@@ -30,8 +30,8 @@ class SponsoredPostsController < ApplicationController
 
   def update
     @sponsoredpost = SponsoredPost.find(params[:id])
-    @sponsoredpost.title = params[:sponsoredpost][:title]
-    @sponsoredpost.body = params[:sponsoredpost][:body]
+    @sponsoredpost.title = params[:sponsored_post][:title]
+    @sponsoredpost.body = params[:sponsored_post][:body]
 
     if @sponsoredpost.save
       flash[:notice] = "SponsoredPost was updated."
