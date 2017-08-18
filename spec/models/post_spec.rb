@@ -1,4 +1,5 @@
 require 'rails_helper'
+include RandomData
 
 RSpec.describe Post, type: :model do
   let(:name) { RandomData.random_sentence }
@@ -72,5 +73,21 @@ RSpec.describe Post, type: :model do
           expect(post.rank).to eq (old_rank - 1)
         end
       end
+    end
+
+    describe "#create_vote" do
+      it "adds an upvote to a post after it is created" do
+         expect(post.up_votes).to eq(1)
+       end
+
+       it "calls #create_vote when post is created" do
+         post = topic.posts.new(title: title, body: body, user: user)
+         expect(post).to receive(:create_vote)
+         post.save
+     end
+
+      it "associates the vote with the owner of the post" do
+        expect(post.votes.first.user).to eq(post.user)
+      end
    end
-end
+ end
