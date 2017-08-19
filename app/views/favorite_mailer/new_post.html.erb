@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>You will now receive notifications for your post: "<%= @post.title %>"</h1>
+    <p>
+      View your post here: <%= link_to "View post on site", topic_post_url(@post.topic, @post) %>
+    </p>
+  </body>
+</html>

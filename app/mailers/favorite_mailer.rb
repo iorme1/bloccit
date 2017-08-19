@@ -2,7 +2,6 @@ class FavoriteMailer < ApplicationMailer
     default from: "isorme1@gmail.com"
 
     def new_comment(user, post, comment)
-
      headers["Message-ID"] = "<comments/#{comment.id}@your-app-name.example>"
      headers["In-Reply-To"] = "<post/#{post.id}@your-app-name.example>"
      headers["References"] = "<post/#{post.id}@your-app-name.example>"
@@ -12,5 +11,15 @@ class FavoriteMailer < ApplicationMailer
      @comment = comment
 
      mail(to: user.email, subject: "New comment on #{post.title}")
+   end
+
+   def new_post(post)
+     headers["Message-ID"] = "<posts/#{post.id}@your-app-name.example>"
+     headers["In-Reply-To"] = "<post/#{post.id}@your-app-name.example>"
+     headers["References"] = "<post/#{post.id}@your-app-name.example>"
+
+     @post = post
+
+     mail(to: post.user.email, subject: "You are setup to receive notifications on #{post.title}")
    end
 end
