@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :topic do
-    name "MyString"
-    public false
-    description "MyText"
+    name RandomData.random_name
+    description RandomData.random_sentence
   end
 end
