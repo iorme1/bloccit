@@ -1,0 +1,6 @@
+<%= @user.favorites.each do |fav| %>
+  <%= image_tag fav.post.user.avatar_url(20) %> <br />
+  Title:    <%= fav.post.title %> <br />
+  Votes:    <%= fav.post.votes.count %> <br />
+  Comments: <%= fav.post.comments.count %> <br />
+  <% end %>
