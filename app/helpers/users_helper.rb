@@ -1,5 +1,4 @@
 module UsersHelper
-
   def has_posts
     return true if @user.posts.count > 0
     false
@@ -9,5 +8,4 @@ module UsersHelper
     return true if @user.comments.count > 0
     false
   end
-
 end
