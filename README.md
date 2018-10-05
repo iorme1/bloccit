@@ -1,11 +1,13 @@
-## Bloccit: a Reddit replica to teach the fundamentals of web development and Rails.
+## Bloccit
+ Reddit replica to teach the fundamentals of web development and Rails.
+ Live app: https://bloccit-io.herokuapp.com/
 
 ## Tech Details
 Built with Ruby On Rails
 
 ## Screenshots
 
-### Home page 
+### Home page
 ![bloccit-home-page](https://user-images.githubusercontent.com/28276414/43113652-164eb85a-8eb0-11e8-8596-ecbd1355a7fe.png)
 
 
