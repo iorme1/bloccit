@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :post do
-    title RandomData.random_sentence
-    body RandomData.random_paragraph
+    title Faker::Lorem.sentence
+    body Faker::Lorem.paragraph
     topic
     user
     rank 0.0

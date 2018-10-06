@@ -4,7 +4,6 @@ RSpec.describe Topic, type: :model do
    let(:topic) { create(:topic) }
    let(:public) { true }
 
-
    it { is_expected.to have_many(:posts) }
 
    describe "attributes" do

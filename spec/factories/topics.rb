@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :topic do
-    name RandomData.random_name
-    description RandomData.random_sentence
+    name Faker::Lorem.sentence(2)
+    description Faker::Lorem.sentence(4)
   end
 end

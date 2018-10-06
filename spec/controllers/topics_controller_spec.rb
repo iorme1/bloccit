@@ -1,5 +1,4 @@
 require 'rails_helper'
-include RandomData
 include SessionsHelper
 
 RSpec.describe TopicsController, type: :controller do
@@ -44,7 +43,7 @@ RSpec.describe TopicsController, type: :controller do
 
     describe "POST create" do
       it "returns http redirect" do
-        post :create, topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph}
+        post :create, topic: {name: Faker::Lorem.sentence, description: Faker::Lorem.paragraph}
         expect(response).to redirect_to(new_session_path)
       end
     end
@@ -58,8 +57,8 @@ RSpec.describe TopicsController, type: :controller do
 
     describe "PUT update" do
       it "returns http redirect" do
-        new_name = RandomData.random_sentence
-        new_description = RandomData.random_paragraph
+        new_name = Faker::Lorem.sentence
+        new_description = Faker::Lorem.paragraph
 
         put :update, id: my_topic.id, topic: {name: new_name, description: new_description }
         expect(response).to redirect_to(new_session_path)
@@ -118,7 +117,7 @@ RSpec.describe TopicsController, type: :controller do
 
     describe "POST create" do
       it "returns http redirect" do
-        post :create, topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph}
+        post :create, topic: {name: Faker::Lorem.sentence, description: Faker::Lorem.paragraph}
         expect(response).to redirect_to(topics_path)
       end
     end
@@ -132,8 +131,8 @@ RSpec.describe TopicsController, type: :controller do
 
     describe "PUT update" do
       it "returns http redirect" do
-        new_name = RandomData.random_sentence
-        new_description = RandomData.random_paragraph
+        new_name = Faker::Lorem.sentence
+        new_description = Faker::Lorem.paragraph
 
         put :update, id: my_topic.id, topic: {name: new_name, description: new_description}
         expect(response).to redirect_to(topics_path)
@@ -202,16 +201,16 @@ RSpec.describe TopicsController, type: :controller do
 
     describe "POST create" do
       it "increases the number of topics by 1" do
-        expect{ post :create, topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph} }.to change(Topic,:count).by(1)
+        expect{ post :create, topic: {name: Faker::Lorem.sentence, description: Faker::Lorem.paragraph} }.to change(Topic,:count).by(1)
       end
 
       it "assigns Topic.last to @topic" do
-        post :create, topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph}
+        post :create, topic: {name: Faker::Lorem.sentence, description: Faker::Lorem.paragraph}
         expect(assigns(:topic)).to eq Topic.last
       end
 
       it "redirects to the new topic" do
-        post :create, topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph}
+        post :create, topic: {name: Faker::Lorem.sentence, description: Faker::Lorem.paragraph}
         expect(response).to redirect_to Topic.last
       end
     end
@@ -239,8 +238,8 @@ RSpec.describe TopicsController, type: :controller do
 
     describe "PUT update" do
       it "updates topic with expected attributes" do
-        new_name = RandomData.random_sentence
-        new_description = RandomData.random_paragraph
+        new_name = Faker::Lorem.sentence
+        new_description = Faker::Lorem.paragraph
 
         put :update, id: my_topic.id, topic: {name: new_name, description: new_description}
 
@@ -251,8 +250,8 @@ RSpec.describe TopicsController, type: :controller do
       end
 
       it "redirects to the updated topic" do
-        new_name = RandomData.random_sentence
-        new_description = RandomData.random_paragraph
+        new_name = Faker::Lorem.sentence
+        new_description = Faker::Lorem.paragraph
 
         put :update, id: my_topic.id, topic: {name: new_name, description: new_description}
         expect(response).to redirect_to my_topic
