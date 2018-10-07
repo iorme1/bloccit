@@ -26,7 +26,7 @@ topics = Topic.all
     user:   users.sample,
     topic:  topics.sample,
     title:  Faker::Lorem.sentence,
-    body:   Faker::Lorem.paragraph
+    body:   Faker::Lorem.sentence(300)
   )
   post.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
   rand(1..5).times { post.votes.create!(value: [-1, 1].sample, user: users.sample) }

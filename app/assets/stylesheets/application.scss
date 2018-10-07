@@ -16,6 +16,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+body {
+  font-family: Georgia;
+  background-image: url('bg-image.png');
+}
 .user-info {
   margin-top: 9px;
 }
