@@ -26,11 +26,11 @@
      <%= link_to "Delete Post", [@post.topic, @post], method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this post?' } %>
    </div>
   <% end %>
-   <div class="col-md-4">
+   <div class="col-md-4 point-vote-desc">
     <h3>
       <%= pluralize(@post.points, 'point') %>
       <div>
-        <small>
+        <small class="vote-sub-desc">
           <%= pluralize(@post.up_votes, 'up vote') %>,
           <%= pluralize(@post.down_votes, 'down vote') %>
         </small>

@@ -1,3 +1,24 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.point-vote-desc {
+  border-radius: 15px;
+  background-color: #001f3f;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.vote-sub-desc {
+  color: whitesmoke;
+  font-style: italic;
+}
+
+@media all and (max-width: 1024px) {
+  .point-vote-desc {
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 5px;
+  }
+}
